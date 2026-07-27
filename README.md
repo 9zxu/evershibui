@@ -40,12 +40,29 @@ This theme requires Hugo `0.146.0` or later.
 
 ### Colorscheme
 
-All raw hex colors live in a single file: `assets/css/_palette.css`. It defines the "Shibui" palette (dark "Sumi" / light "Washi") as `--ef-*` CSS variables — this is the only file allowed to contain hex codes.
+- `assets/css/_palette.css`: the only file allowed to contain hex codes. Defines the "Shibui" palette (dark "Sumi" / light "Washi") as `--ef-*` CSS variables.
+- `assets/css/_tokens.css`: the semantic token layer. Maps abstract names (e.g. `--color-bg`, `--color-text`) to the `--ef-*` variables. No hex codes here either.
+- `assets/css/_palette-everforest.css`: the previous Everforest palette, unused, kept as a reference/rollback option.
+- `assets/css/main.css`: controls which palette is active, through its `@import` order.
 
-Every other stylesheet references semantic tokens from `assets/css/_tokens.css` instead, which map abstract names (e.g. `--color-bg`, `--color-text`) to the `--ef-*` variables. To customize the colorscheme, edit the hex values in `_palette.css`; to change what a token *means*, remap it in `_tokens.css`. Layout and component CSS should never reference `--ef-*` or hex values directly.
+Layout and component CSS should never reference `--ef-*` variables or hex values directly. They only use the semantic tokens.
 
-A previous Everforest palette is kept, unused, in `assets/css/_palette-everforest.css` as a reference/rollback option — swap the `@import` in `assets/css/main.css` to switch palettes.
+There are two separate ways to customize the colors:
+
+- **Changing the colorscheme**: edit the hex values in `_palette.css`. This changes what each color looks like everywhere it's used. To switch to the Everforest palette entirely, swap the `@import` in `main.css` from `_palette.css` to `_palette-everforest.css`.
+- **Changing the color mapping**: remap a token in `_tokens.css` to a different `--ef-*` variable. This changes which color a token uses, without touching the palette itself.
 
 ### Layout
 
-Layouts live under `layouts/`, built around `layouts/baseof.html` as the base template, with reusable pieces in `layouts/_partials/` (header, footer, sidebar, menu, post list, etc.) and content-type templates at the top level (`home.html`, `page.html`, `section.html`, `taxonomy.html`, `term.html`). Override any of these by copying the file into your site's own `layouts/` directory with the same relative path — Hugo will prefer the site's version over the theme's.
+Layouts live under `layouts/`:
+
+- `baseof.html`: base template all other templates build on.
+- `home.html`, `page.html`, `section.html`, `taxonomy.html`, `term.html`: content-type templates.
+- `404.html`: not-found page.
+- `_partials/header.html`, `_partials/footer.html`, `_partials/sidebar.html`, `_partials/menu.html`: page chrome.
+- `_partials/post-list.html`, `_partials/term-list.html`, `_partials/terms.html`: listing partials.
+- `_partials/head.html`, `_partials/head/css.html`, `_partials/head/js.html`: `<head>` asset includes.
+- `_partials/github-card.html`: GitHub profile card shown on the homepage.
+- `_markup/render-blockquote.html`: render hook for `[!NOTE]`-style callout blockquotes.
+
+Override any of these by copying the file into your site's own `layouts/` directory with the same relative path. Hugo will prefer the site's version over the theme's.
