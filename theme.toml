@@ -14,19 +14,18 @@ tags = [
   "personal",
   "responsive",
   "dark",
+  "light",
 ]
 
 features = [
   "responsive",
-  "dark mode",
+  "dark/light mode",
   "syntax highlighting",
   "tags",
-  "custom color palette",
   "math (KaTeX)",
+  "sidebar outline",
 ]
-
-min_version = "0.146.0"
 
 [author]
   name = "9zxu"
-  homepage = "https://github.com/9zxu"
+  homepage = "https://9zxu.github.io"
