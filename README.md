@@ -9,7 +9,7 @@ Please visit https://9zxu.github.io/posts/evershibui/ for a detailed theme intro
 | :-----: | :------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
 |  Home   | ![home-light](https://raw.githubusercontent.com/9zxu/evershibui/main/images/light-home.png) | ![home-dark](https://raw.githubusercontent.com/9zxu/evershibui/main/images/dark-home.png) |
 | Content | ![content-light](https://raw.githubusercontent.com/9zxu/evershibui/main/images/light-content.png) | ![content-dark](https://raw.githubusercontent.com/9zxu/evershibui/main/images/dark-content.png) |
-|  Post   | ![post-light](https://raw.githubusercontent.com/9zxu/evershibui/main/images/light-post.png) | ![post-dark](https://raw.githubusercontent.com/9zxu/evershibui/main/images/dark-post.png) |
+|  Post   | ![post-light](https://raw.githubusercontent.com/9zxu/evershibui/main/images/light-posts.png) | ![post-dark](https://raw.githubusercontent.com/9zxu/evershibui/main/images/dark-posts.png) |
 
 ## Features
 
